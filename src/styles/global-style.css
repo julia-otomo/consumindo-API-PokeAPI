@@ -1,0 +1,16 @@
+:root {
+    --background-color: #212529;
+    --cards-background-color: #343A40;
+    --h2-color: #DEE2E6;
+    --pokemon-names-color: #CED4DA;
+    --input-font-color: #7C8B99;
+    --button-background-color: #4C6EF5;
+    --button-background-hover-color: #354eb1;
+    --loading-font-color: #ADB5BD;
+    --border-radius-default: 8px;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: var(--background-color);
+}
