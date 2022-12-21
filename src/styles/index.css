@@ -133,6 +133,16 @@ main .main__container #pokemon_list li > h3 {
     font-size: 1.25rem;
 }
 
+main .main__container #pokemon_list > p {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 4rem;
+    color: var(--pokemon-names-color);
+    text-align: center;
+    line-height: 150%;
+    padding: 0 1rem;
+}
+
 
 @media(min-width: 769px) {
     header .header__container {

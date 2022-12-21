@@ -19,6 +19,7 @@ async function consomePokeAPI() {
 }
 
 async function getPokemonByName (pokemonName) {
+  const ul = document.querySelector('#pokemon_list');
   const loading = document.querySelector('#loading');
 
   const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`, {
@@ -32,7 +33,12 @@ async function getPokemonByName (pokemonName) {
     loading.classList.add('hidden');
     renderPokemonFound(response);
   })
-  .catch (() => console.log('Não foi encontrado nenhum pokemon com esse nome'))
+  .catch (() => {
+    let p = document.createElement('p');
+    p.innerText = 'Não foi possível encontrar nenhum pokemon com esse nome. Tente novamente !'
+
+    ul.appendChild(p);
+  }) 
 
   return pokemon;
 }
