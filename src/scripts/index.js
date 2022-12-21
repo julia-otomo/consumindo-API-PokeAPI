@@ -1,4 +1,4 @@
-function renderizaPokemons(array) {
+function renderPokemons(array) {
     const ul = document.querySelector('#pokemon_list');
   
     array.forEach(pokemon => {
@@ -8,11 +8,19 @@ function renderizaPokemons(array) {
   
       ul.appendChild(pokemons);
     });
-  
-    
   }
-  
-  function createCards (pokemon, pokedex) {
+
+function renderPokemonFound (pokemon) {
+    const ul = document.querySelector('#pokemon_list');
+
+    const pokedex = pokemon.id;
+
+    let pokemonCard = createCards(pokemon, pokedex);
+
+    ul.appendChild(pokemonCard);
+  }
+
+function createCards (pokemon, pokedex) {
     let li = document.createElement('li');
   
     let pokemonImage = document.createElement('img');
