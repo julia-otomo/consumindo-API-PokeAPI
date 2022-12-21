@@ -46,14 +46,13 @@ function renderSearch() {
     e.preventDefault();
     ul.innerHTML = '';
 
-    if (searchInput.value === '') {
+    if (searchInput.value == '') {
       consomePokeAPI();
+    } else {
+      getPokemonByName(searchInput.value.toLowerCase())
     }
-
-    getPokemonByName(searchInput.value.toLowerCase())
   })
 }
-
 
 consomePokeAPI();
 
