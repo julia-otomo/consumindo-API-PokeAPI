@@ -70,6 +70,7 @@ main .main__container {
     flex-direction: column;
     align-items: center;
     gap: 4.625rem;
+    margin-bottom: 2rem;
 }
 
 main .main__container > h2 {
@@ -88,4 +89,38 @@ main .main__container > p {
 
 main .main__container .hidden {
     display: none;
+}
+
+main .main__container #pokemon_list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    width: 100%;
+    align-items: center;
+}
+
+main .main__container #pokemon_list li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 3.75rem;
+    width: 50rem;
+    max-width: 90%;
+    background-color: var(--cards-background-color);
+    border-radius: var(--border-radius-default);
+    gap: 0.75rem;
+    padding: 0 0.4rem;
+    box-sizing: border-box;
+
+}
+
+main .main__container #pokemon_list li > img {
+   height: 60px;
+   width: auto; 
+}
+
+main .main__container #pokemon_list li > h3 {
+    color: var(--pokemon-names-color);
+    font-weight: 500;
+    font-size: 1.25rem;
 }
