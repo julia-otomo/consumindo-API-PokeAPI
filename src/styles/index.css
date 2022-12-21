@@ -32,7 +32,8 @@ header .header__container form > input {
     outline: none;
     border: none;
     border-radius: var(--border-radius-default);
-    width: 70%;
+    width: 14.563rem;
+    max-width: 70%;
     padding: 1rem 1.5rem;
     box-sizing: border-box;
     background-color: var(--cards-background-color);
@@ -41,9 +42,16 @@ header .header__container form > input {
     font-weight: 500;
 }
 
+header .header__container form > input:focus {
+    background-color: #fff;
+    border: 1px solid var(--cards-background-color);
+    color: var(--background-color);
+}
+
 header .header__container form > button {
     height: 100%;
-    width: 20%;
+    width: 5.375rem;
+    max-width: 20%;
     border: none;
     border-radius: var(--border-radius-default);
     cursor: pointer;
@@ -123,4 +131,17 @@ main .main__container #pokemon_list li > h3 {
     color: var(--pokemon-names-color);
     font-weight: 500;
     font-size: 1.25rem;
+}
+
+
+@media(min-width: 769px) {
+    header .header__container {
+        flex-direction: row;
+        width: 50.063rem;
+        justify-content: space-between;
+    }
+
+    header .header__container form {
+        justify-content: flex-end;
+    }
 }

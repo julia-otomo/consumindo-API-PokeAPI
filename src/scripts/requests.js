@@ -1,7 +1,7 @@
 async function consomePokeAPI() {
     const loading = document.querySelector('#loading');
 
-    const pokemonsDaApi = await fetch('https://pokeapi.co/api/v2/pokemon', {
+    const pokemonsDaApi = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json'
