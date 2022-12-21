@@ -15,5 +15,20 @@ async function consomePokeAPI() {
     return pokemonsDaApi.results;
 }
 
-let pokemonList = await consomePokeAPI();
+consomePokeAPI();
 
+async function renderizaPokemons() {
+  const ul = document.querySelector('#pokemon_list');
+
+  const pokemonList = await consomePokeAPI();
+
+  pokemonList.forEach(pokemon => {
+    const pokedexNumber = pokemon.url.slice(34, -1);
+
+    console.log(pokedexNumber);
+  });
+
+  
+}
+
+renderizaPokemons()

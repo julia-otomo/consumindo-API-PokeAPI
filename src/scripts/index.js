@@ -1,7 +1,7 @@
-async function renderizaPokemons() {
-    const pokemons = await pokemonList;
+// async function renderizaPokemons() {
+//     const pokemons = await pokemonList;
 
-    console.log(pokemons);
-}
+//     console.log(pokemons);
+// }
 
-renderizaPokemons()
+// renderizaPokemons()
