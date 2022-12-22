@@ -32,6 +32,7 @@ async function getPokemonByName (pokemonName) {
   .then ((response) => {
     loading.classList.add('hidden');
     renderPokemonFound(response);
+    returnToAllPokemons ();
   })
   .catch (() => {
     let p = document.createElement('p');
@@ -52,16 +53,26 @@ function renderSearch() {
     e.preventDefault();
     ul.innerHTML = '';
 
-    if (searchInput.value == '') {
-      consomePokeAPI();
-    } else {
-      getPokemonByName(searchInput.value.toLowerCase())
-    }
+    getPokemonByName(searchInput.value.toLowerCase().trim());
+
+    searchInput.value = '';
   })
+}
+
+function returnToAllPokemons () {
+  const button = document.querySelector('.return_button');
+  const ul = document.querySelector('#pokemon_list');
+
+  button.addEventListener('click', () => {
+    ul.innerHTML = '';
+    consomePokeAPI();
+  })
+
 }
 
 consomePokeAPI();
 
 renderSearch();
+
 
 

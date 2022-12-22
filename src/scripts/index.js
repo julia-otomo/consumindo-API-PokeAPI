@@ -15,9 +15,13 @@ function renderPokemonFound (pokemon) {
 
     const pokedex = pokemon.id;
 
-    let pokemonCard = createCards(pokemon, pokedex);
+    let pokemonCard =createCardSpecificPokemon(pokemon, pokedex);
 
-    ul.appendChild(pokemonCard);
+    let returnButton = document.createElement('button');
+    returnButton.classList.add('return_button');
+    returnButton.innerText = 'Voltar';
+
+    ul.append(pokemonCard, returnButton);
   }
 
 function createCards (pokemon, pokedex) {
@@ -34,5 +38,21 @@ function createCards (pokemon, pokedex) {
   
     return li;
   }
+
+  function createCardSpecificPokemon (pokemon, pokedex) {
+    let li = document.createElement('li');
+  
+    let pokemonImage = document.createElement('img');
+    pokemonImage.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokedex}.png`;
+    pokemonImage.alt = pokemon.name;
+  
+    let pokemonName = document.createElement('h3');
+    pokemonName.innerText = pokemon.name[0].toUpperCase() + pokemon.name.substring(1);
+  
+    li.append(pokemonImage, pokemonName);
+  
+    return li;
+  }
+  
 
 
