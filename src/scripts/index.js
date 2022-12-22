@@ -39,7 +39,7 @@ function createCards (pokemon, pokedex) {
     return li;
   }
 
-  function createCardSpecificPokemon (pokemon, pokedex) {
+function createCardSpecificPokemon (pokemon, pokedex) {
     let li = document.createElement('li');
   
     let pokemonImage = document.createElement('img');
@@ -53,6 +53,20 @@ function createCards (pokemon, pokedex) {
   
     return li;
   }
+function createToast() {
+  let toast = document.createElement('dialog');
+  toast.classList.add('toast');
+
+  let p = document.createElement('p');
+  p.innerText = 'Não foi possível encontrar nenhum pokemon com esse nome';
+
+  let img = document.createElement('img');
+  img.src = './src/assets/dcbvppr-f829a4de-23eb-4826-9c8e-5ea941962211.png';
+
+  toast.append(p, img);
+
+  return toast;
+}
   
 
 

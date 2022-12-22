@@ -19,7 +19,6 @@ async function consomePokeAPI() {
 }
 
 async function getPokemonByName (pokemonName) {
-  const ul = document.querySelector('#pokemon_list');
   const loading = document.querySelector('#loading');
 
   const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`, {
@@ -35,10 +34,20 @@ async function getPokemonByName (pokemonName) {
     returnToAllPokemons ();
   })
   .catch (() => {
-    let p = document.createElement('p');
-    p.innerText = 'Não foi possível encontrar nenhum pokemon com esse nome. Tente novamente !'
+    consomePokeAPI();
+    const main = document.querySelector('main');
+    const toast = createToast();
 
-    ul.appendChild(p);
+    main.append(toast);
+
+    setTimeout(() => {
+      toast.classList.add('toast_out')
+    }, 2000);
+
+    setTimeout(() => {
+      toast.classList.remove('toast_out');
+      toast.remove();
+    }, 3000)
   }) 
 
   return pokemon;
